@@ -1,0 +1,59 @@
+<div class="main-container">
+  <div style="font-size: 14px; color: #27ae60">&#8226; Experience</div>
+  <div class="container">
+    <div>
+      <div
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          width: 400px;
+          margin-left: 1%;
+        "
+      >
+        6+ years of passion for programming techniques
+      </div>
+      <div
+        *ngFor="let data of expList;let i = index"
+        class="expCard"
+        (click)="companySelect(data,i)"
+        [ngClass]="{'activeClass': i === activeIndex}"
+      >
+        <div
+          [style.backgroundImage]="'url(' + data.logo + ')'"
+          class="bg-container"
+        ></div>
+        <div style="margin: 2%">
+          <div style="font-size: 16px; font-weight: bold">
+            {{ data.companyName }}
+          </div>
+          <div style="font-size: 12px">
+            {{ formatDate(data.startTime) }} -
+            {{ isToday(data.endTime) ? "Present" : formatDate(data.endTime) }}
+            ({{ getYearMonthDifference(data.startTime, data.endTime) }})
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="desc-section">
+      <div>
+        <div style="font-size: 14px; font-weight: bold; color: #27ae60">
+          {{ position }}
+        </div>
+        <div>
+          <ul>
+            <li *ngFor="let desc of description" style="margin-top: 2%;">
+              {{ desc }}
+            </li>
+          </ul>
+        </div>
+        <div>
+          <mat-chip-listbox aria-label="skill display">
+            <mat-chip-option color="primary" *ngFor="let skill of skills">{{
+              skill
+            }}</mat-chip-option>
+          </mat-chip-listbox>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="main-container">
+  <div class="hero-section">
+    <div style="width: 70%">
+      <div class="background-div"></div>
+    </div>
+    <div>
+      <div class="intro-container">
+        <span
+          >&lt;span&gt;
+          <span style="color: black">Hey, I'm Hithesh</span> &lt;/span&gt;</span
+        >
+
+        <h2>
+          Senior <span class="highlight">{{ "{Front end developer}" }}</span>
+        </h2>
+        <div class="developer-title">Web application Developer_</div>
+
+        <p>
+          With expertise in cutting-edge technologies such as
+          <span>Angular 2+</span>,<span>NodeJs</span>,<span>ReactJs</span>,<span
+            >Figma</span
+          >
+          and others. I deliver web solutions that are both innovative and
+          robust.
+        </p>
+
+        <button mat-icon-button matTooltip="Angular 2+">
+          <mat-icon svgIcon="custom-icon-angular"></mat-icon>
+        </button>
+
+        <button mat-icon-button matTooltip="Node JS">
+          <mat-icon svgIcon="custom-icon-nodejs"></mat-icon>
+        </button>
+
+        <button mat-icon-button matTooltip="React JS+">
+          <mat-icon svgIcon="custom-icon-react"></mat-icon>
+        </button>
+
+        <button mat-icon-button matTooltip="Figma">
+          <mat-icon svgIcon="custom-icon-figma"></mat-icon>
+        </button>
+        <span style="cursor: pointer" (click)="more = true" *ngIf="!more"
+          >...and more</span
+        >
+
+        <span *ngIf="more">
+          <button mat-icon-button matTooltip="Typescript">
+            <mat-icon svgIcon="custom-icon-typescript"></mat-icon>
+          </button>
+
+          <button mat-icon-button matTooltip="JavaScript">
+            <mat-icon svgIcon="custom-icon-js"></mat-icon>
+          </button>
+
+          <button mat-icon-button matTooltip="MongoDB">
+            <mat-icon svgIcon="custom-icon-mongodb"></mat-icon>
+          </button>
+
+          <button mat-icon-button matTooltip="HTML5">
+            <mat-icon svgIcon="custom-icon-html5"></mat-icon>
+          </button>
+
+          <button mat-icon-button matTooltip="CSS3">
+            <mat-icon svgIcon="custom-icon-css3"></mat-icon>
+          </button>
+
+          <button mat-icon-button matTooltip="SASS">
+            <mat-icon svgIcon="custom-icon-sass"></mat-icon>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="count-section">
+    <div class="count-card" *ngFor="let data of countList">
+      <app-count-section
+        [icon]="data.icon"
+        [count]="data.count"
+        [description]="data.description"
+      ></app-count-section>
+    </div>
+  </div>
+  <div style="margin-top: 5%">
+    <app-offer-section [list]="offersList"></app-offer-section>
+  </div>
+  <div>
+    <app-experience-section style="margin-top: 5%"></app-experience-section>
+  </div>
+  <div class="edu-container">
+      <app-education [educationDetails]="educationDetails"></app-education>
+     <app-extra></app-extra>
+  </div>
+</div>

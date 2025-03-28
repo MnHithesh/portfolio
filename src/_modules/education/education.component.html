@@ -1,0 +1,13 @@
+<div class="main-container">
+  <div style="font-size: 14px; color: #27ae60">&#8226; Education</div>
+  <mat-vertical-stepper [linear]="false" #stepper>
+    <mat-step [completed]="true" *ngFor="let data of educationDetails">
+      <ng-template matStepLabel>
+        <span>{{ data.year }}:</span>
+        <span style="color: #27ae60">{{ data.institute }}</span>
+        <br />
+        <span>{{ data.desc }}</span>
+      </ng-template>
+    </mat-step>
+  </mat-vertical-stepper>
+</div>

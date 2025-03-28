@@ -1,0 +1,23 @@
+  <div class="offer-description">
+      <div style="color: #27ae60; font-size: 18px; font-weight: bold">
+        What do i offer
+      </div>
+      <div style="font-size: 35px; font-weight: bold; width: 75%">
+        Designing Solutions customized to meet your requirenments
+      </div>
+    </div>
+    <div class="card-section">
+      <div *ngFor="let data of list" class="offer-card">
+        <div>
+          <mat-icon style="color: #b5b5b5">{{ data.icon }}</mat-icon>
+        </div>
+        <div style="font-size: 20px; font-weight: bold">{{ data.heading }}</div>
+        <div style="color: #b5b5b5">{{ data.description }}</div>
+      </div>
+    </div>
+    <div class="offer-description" style="margin:10px">
+        <div style="font-size: 16px; width: 45%">
+          Excited to take on new projects and responsibilities, lets chat about
+          idea. <span style="color: #27ae60">Reach Out</span>
+        </div>
+      </div>
